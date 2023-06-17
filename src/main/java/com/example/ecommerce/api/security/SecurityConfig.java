@@ -22,7 +22,7 @@ public class SecurityConfig {
         http.addFilterBefore(jwtRequestFilter, AuthorizationFilter.class);
 
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/product", "/auth/register", "/auth/login").permitAll()
+                .requestMatchers("/product", "/auth/register", "/auth/login", "/auth/verify").permitAll()
                 .anyRequest().authenticated()
         );
 
